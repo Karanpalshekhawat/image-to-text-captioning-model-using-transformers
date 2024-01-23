@@ -56,12 +56,12 @@ version = version_module.VERSION
 
 install_requires = read_requirements('requirements.txt')
 long_description = read_utf8('README.md')
-short_description = "An approach to learn non linear relationship between option parameters and its price using /" \
-                    "Deep Neural Network"""
-url = 'https://github.com/Karanpalshekhawat/option-pricing-and-implied-volatility-using-NNs'
+short_description = "An app that downloads images from internet based on prompt and then automatically generate /" \
+                    "captions using vision encoder decoder text model"""
+url = 'https://github.com/Karanpalshekhawat/image-to-text-captioning-model-using-transformers'
 
 setup(
-    name='option-price-using-NN',
+    name='image-captioning-using-transformers',
     version=version,
     description=short_description,
     long_description=long_description,

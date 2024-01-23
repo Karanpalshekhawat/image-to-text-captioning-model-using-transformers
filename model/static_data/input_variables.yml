@@ -1,4 +1,2 @@
 ---
-- ticker : "^SPX"
-  opt_type : european
-  opt_kind : call
+- query : "Cricket batsman hitting boundaries"

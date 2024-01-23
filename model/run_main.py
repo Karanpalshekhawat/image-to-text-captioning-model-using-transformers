@@ -1,8 +1,8 @@
 """
-This module is the main file which call all
-other modules to import data, run neural
-network model and generate parameters and then
-create output file for pricing options
+This module is the main file which calls all
+other modules to create UI and prompt user for query,
+run internet search to download image, and finally
+run transformer model to generate caption
 """
 import json
 import argparse
