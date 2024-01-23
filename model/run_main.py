@@ -14,3 +14,5 @@ if __name__ == "__main__":
     query, nums = read_query_and_img_count(path)
     output_dir = os.getcwd() + "/model/output/dataset/"
     _ = download_image(query, nums, output_dir)
+    images_directory = output_dir + query + "/"
+    captions = caption_images(images_directory)
