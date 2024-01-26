@@ -10,6 +10,8 @@ import os
 from model import *
 
 if __name__ == "__main__":
+    old_image_path = os.getcwd() + "/model/output/dataset/"
+    delete_previous_images(old_image_path)
     path = os.getcwd() + "/model/static_data/"
     query, nums = read_query_and_img_count(path)
     output_dir = os.getcwd() + "/model/output/dataset/"
