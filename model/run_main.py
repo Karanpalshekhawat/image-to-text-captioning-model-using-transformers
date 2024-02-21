@@ -9,12 +9,15 @@ import os
 
 from model import *
 
-if __name__ == "__main__":
+
+def run_app(query, num_of_images):
     old_image_path = os.getcwd() + "/model/output/dataset/"
     delete_previous_images(old_image_path)
-    path = os.getcwd() + "/model/static_data/"
-    query, nums = read_query_and_img_count(path)
     output_dir = os.getcwd() + "/model/output/dataset/"
-    _ = download_image(query, nums, output_dir)
+    _ = download_image(query, num_of_images, output_dir)
     images_directory = output_dir + query + "/"
     captions = caption_images(images_directory)
+    images_list = list(captions.keys())
+    label_list = list(captions.values())
+    pil_img = convert_jpg_images_to_pil(list(captions.keys())[0])
+    return pil_img

@@ -33,3 +33,8 @@ def caption_images(path):
         captions[img] = image_to_text(opn_image)[0]['generated_text']
 
     return captions
+
+
+def convert_jpg_images_to_pil(img):
+    pil_image = Image.open(img)
+    return pil_image

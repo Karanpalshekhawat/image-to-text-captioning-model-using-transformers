@@ -3,7 +3,8 @@ This module downloads images from Internet
 based on the query given by user
 """
 
-import os, shutil
+import os
+import shutil
 
 from bing_image_downloader import downloader
 
