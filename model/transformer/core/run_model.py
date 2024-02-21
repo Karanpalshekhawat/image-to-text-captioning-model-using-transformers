@@ -35,6 +35,8 @@ def caption_images(path):
     return captions
 
 
-def convert_jpg_images_to_pil(img):
-    pil_image = Image.open(img)
+def convert_jpg_images_to_pil(img_ls):
+    pil_image = []
+    for img in img_ls:
+        pil_image.append(Image.open(img))
     return pil_image
