@@ -26,5 +26,6 @@ def running_caption_generating_model(query):
     images_directory = os.getcwd() + "/model/output/dataset/Output/"
     captions = caption_images(images_directory)
     images_list = list(captions.keys())
+    caption_list = list(captions.values())
     pil_img_ls = convert_jpg_images_to_pil(images_list)
-    return pil_img_ls[0]
+    return pil_img_ls[0], caption_list[0]
