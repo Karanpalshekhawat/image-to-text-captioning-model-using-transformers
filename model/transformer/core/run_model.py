@@ -24,15 +24,16 @@ def caption_images(path):
         captions (dict): dictionary with image information
                          and its generated captions
     """
-    captions = {}
+    img_and_captions = []
     image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 
     img_list = glob.glob(path + "*.jpg")
     for img in img_list:
         opn_image = Image.open(img)
-        captions[img] = image_to_text(opn_image)[0]['generated_text']
+        caption = image_to_text(opn_image)[0]['generated_text']
+        img_and_captions.append((opn_image, caption))
 
-    return captions
+    return img_and_captions
 
 
 def convert_jpg_images_to_pil(img_ls):

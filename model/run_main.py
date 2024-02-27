@@ -6,7 +6,6 @@ run transformer model to generate caption
 """
 
 import os
-import gradio as gr
 
 from model import *
 
@@ -22,10 +21,7 @@ def run_app(query, num_of_images):
     return
 
 
-def running_caption_generating_model(query):
+def running_caption_generating_model(num):
     images_directory = os.getcwd() + "/model/output/dataset/Output/"
     captions = caption_images(images_directory)
-    images_list = list(captions.keys())
-    caption_list = list(captions.values())
-    pil_img_ls = convert_jpg_images_to_pil(images_list)
-    return pil_img_ls[0], caption_list[0]
+    return captions
