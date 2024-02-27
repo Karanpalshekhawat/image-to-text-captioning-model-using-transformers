@@ -18,7 +18,7 @@ def run_app(query, num_of_images):
     old_directory = output_dir + query + "/"
     new_directory = output_dir + "Output" + "/"
     os.rename(old_directory, new_directory)
-    return
+    return "## Download is completed, checkout 'Caption Images' tab"
 
 
 def running_caption_generating_model(num):
