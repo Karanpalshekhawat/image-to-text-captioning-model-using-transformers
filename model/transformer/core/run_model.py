@@ -6,7 +6,6 @@ Later on, will replace this functionality with self trained model
 """
 
 import glob
-import torch
 
 from transformers import pipeline, VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer
 from PIL import Image
@@ -37,6 +36,15 @@ def caption_images(path):
 
 
 def convert_jpg_images_to_pil(img_ls):
+    """
+    Convert images from jpg to Python Image Library (PIL) format
+    Args:
+        img_ls: list of jpg images
+
+    Returns:
+        list of pil images
+    """
+
     pil_image = []
     for img in img_ls:
         pil_image.append(Image.open(img))
