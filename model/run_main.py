@@ -6,6 +6,7 @@ run transformer model to generate caption
 """
 
 import os
+import logging
 
 from model import *
 
@@ -24,6 +25,9 @@ def run_app(query, num_of_images):
     old_image_path = os.getcwd() + "/model/output/dataset/"
     delete_previous_images(old_image_path)
     output_dir = os.getcwd() + "/model/output/dataset/"
+    logger = logging.getLogger('[APP_IMG]')
+    """If you want to use different logfile, instantiate new before this method using set_log_file method"""
+    logger.info("==== DOWNLOADING IMAGES ===")
     try:
         _ = download_image(query, num_of_images, output_dir)
         old_directory = output_dir + query + "/"
@@ -42,5 +46,7 @@ def running_caption_generating_model():
         list of tuple with images in PIL format and caption in str
     """
     images_directory = os.getcwd() + "/model/output/dataset/Output/"
+    logger = logging.getLogger('[APP_IMG]')
+    logger.info("==== CAPTIONING IMAGES===")
     captions = caption_images(images_directory)
     return captions

@@ -22,15 +22,15 @@ if __name__ == "__main__":
         with gr.Tab("Download Images"):
             with gr.Row():
                 query = gr.Textbox(label="Query", placeholder="Describe images that you want to download in 3-4 words")
-                slider = gr.Slider(1, 20, step=1, label="How many images you want to download?")
+                slider = gr.Slider(props.lower_bound_num_images, props.upper_bound_num_images, step=1,
+                                   label="How many images you want to download?")
             with gr.Column():
                 button = gr.Button("Download Images")
             with gr.Column():
                 ot_pt = gr.Markdown()
         with gr.Tab("Caption Images"):
             with gr.Column():
-                gr.Markdown("""# Now we will run the ML model to caption downloaded images! 
-                               Please click on any image for slideshow and better clarity of generated Captions""")
+                gr.Markdown("""Please click on any image on slideshow for better clarity of generated Captions""")
                 button2 = gr.Button("Caption Downloaded Images")
             with gr.Column():
                 gallery = gr.Gallery(show_label=True, elem_id="gallery", object_fit="contain")

@@ -6,6 +6,7 @@ Later on, will replace this functionality with self trained model
 """
 
 import glob
+import logging
 
 from transformers import pipeline, VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer
 from PIL import Image
@@ -25,6 +26,8 @@ def caption_images(path):
     """
     img_and_captions = []
     image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+    logger = logging.getLogger('[APP_IMG]')
+    logger.info("==== RUNNING MODEL ===")
 
     img_list = glob.glob(path + "*.jpg")
     for img in img_list:
