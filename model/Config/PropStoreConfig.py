@@ -28,7 +28,20 @@ class Config(object):
     def grid_app_version(self):
         return self.propstore_properties.get('app_version')
 
+    @property
+    def lower_bound_num_images(self):
+        return self.propstore_properties.get('lower_bound')
 
+    @property
+    def upper_bound_num_images(self):
+        return self.propstore_properties.get('upper_bound')
+
+    @property
+    def main_folder(self):
+        return self.propstore_properties.get('main.folder')
+
+
+# You can import the below class method in any file you want to use it
 class GlobalProperties:
     _prop = None
     _cob = None
